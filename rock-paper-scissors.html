@@ -36,21 +36,23 @@
 
       alert(`You picked paper. Computer picked ${computerMove}. ${result}`);"
     >Paper</button>
-    <button onclick="
-    pickComputerMove()
-
-    let result = '';
-
-    if (computerMove === 'rock') {
-      result = 'You lose.';
-    } else if (computerMove === 'paper') {
-      result = 'You win.';
-    } else if (computerMove === 'scissors') {
-      result = 'Tie.';
-    }
-
-    alert(`You picked rock. Computer picked ${computerMove}. ${result}`);">scissors</button>
+    <button onclick="scissors"</button>
     <script>
+          function playGame (){
+            pickComputerMove()
+
+let result = '';
+
+if (computerMove === 'rock') {
+  result = 'You lose.';
+} else if (computerMove === 'paper') {
+  result = 'You win.';
+} else if (computerMove === 'scissors') {
+  result = 'Tie.';
+}
+
+alert(`You picked rock. Computer picked ${computerMove}. ${result}`);
+          }
        
                 function pickComputerMove () {
                     const randomNumber = Math.random();
