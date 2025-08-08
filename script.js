@@ -1,6 +1,6 @@
-const math = require("./math");
+import { sum, mul, g, PI } from "./math.js";
 
-console.log(math.sum(1, 2));
-console.log(math.mul(1, 2));
-console.log(math.g);
-console.log(math.PI);
+console.log(sum(1, 2));
+console.log(mul(1, 2));
+console.log(g);
+console.log(PI);
