@@ -10,8 +10,9 @@ app.listen(port, () => {
 });
 
 
-app.get("/", (req, res) => {
-    res.send("Hello World");
+app.get("/:username/:id", (req, res) => {
+    console.log(req.params);
+    res.send(`<h1>ich bin ein parameter ${req.params.username} und ${req.params.id}</h1>`);
 });
 
 app.get("/about", (req, res) => {
@@ -23,9 +24,17 @@ app.get("/contact", (req, res) => {
 
 });
 
+app.get("/search", (req, res) => {
+    let {q} = req.query;
+    res.send(`<h1>ich bin ein query ${q}</h1>`);
+});
 
-app.get("*", (req, res) => {
-    res.send("404 Page Not Found");
+// app.get("/*", (req, res) => {
+//     res.send("404 Page Not Found");
+// });
+
+app.post("/post", (req, res) => {
+    res.send("POST Request POST Page");
 });
 
 // app.use((req, res) => {
