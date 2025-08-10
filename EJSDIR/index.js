@@ -14,6 +14,20 @@ app.get("/", (req, res) => {
     });
 });
 
+app.get("/about", (req, res) => {
+    res.render("about.ejs", {
+        title: "About",
+        message: "About Page",
+    });
+});
+
+
+app.get("/contact", (req, res) => {
+    res.render("contact.ejs", {
+        title: "Contact",
+        message: "Contact Page",
+    });
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
