@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
 </head>
-<body>
+<body style="background-color: #000000;" text="white">
     <% if (data) { %>
         <h1>this page is for <%= data.name %></h1>
     <% } else { %>
@@ -13,6 +13,22 @@
     <% } %>
     <button>Follow</button>
     <button>Message</button>
+
+    <p>Followers: <%= data.followers %></p>
+    <p>Following: <%= data.following %></p>
+
+    <% for (let post of data.posts) { %>
+        <img src="<%= post.image %>"
+         alt="post"
+          style="width: 100px; height: 100px; border-radius: 50%;">
+
+          <p>
+            Likes: <%= post.likes %> &nbsp;&nbsp;&nbsp;&nbsp;
+            Comments: <%= post.comments %> &nbsp;&nbsp;&nbsp;&nbsp;
+          </p>
+    <% } %>
+
+
 </body>
 </html>
 
