@@ -31,13 +31,7 @@ app.get("/contact", (req, res) => {
 
 
 app.get("/ig/:username", (req, res) => {
-    const followers = ["John", "Jane", "Jim", "Jill", "Jack", "Jill", "Jim", "Jane", "John", "Jack"];
-    let {username} = req.params;
-    console.log(username);
-    res.render("insta.ejs", {
-        username: username,
-        followers: followers,
-    });
+    res.render("insta.ejs");
 });
 
 
