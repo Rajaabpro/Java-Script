@@ -31,9 +31,11 @@ app.set("views", path.join(__dirname, "views"));
 
 
 app.get("/ig/:username", (req, res) => {
+    let {username} = req.params;
     const instaData = require("./data.json");
-    console.log(instaData);
-    res.render("insta.ejs");
+    const data = instaData[username];
+    console.log(data);
+    res.render("insta.ejs" ,{data: data[username]});
 });
 
 
