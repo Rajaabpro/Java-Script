@@ -3,8 +3,16 @@ const express = require('express');
 const app = express();
 const port = 5050;
 
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/register', (req, res) => {
-    res.send('Hello World');
+    const { name, password } = req.query;
+    res.send(`Hello this is get request ${name}  ${password}`);
+});
+
+app.post('/login', (req, res) => {
+    const { name, password } = req.body;
+    res.send(`Hello this is post request ${name}  ${password}`);
 });
 
 app.listen(port, () => {
