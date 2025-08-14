@@ -1,6 +1,23 @@
-import { sum, mul, g, PI } from "./math.js";
+class person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    talk() {
+        console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+    }
+}
 
-console.log(sum(1, 2));
-console.log(mul(1, 2));
-console.log(g);
-console.log(PI);
+class student {
+    constructor(name, age, grade) {
+        this.grade = grade;
+
+    }
+}
+
+class teacher {
+    constructor(name, age, subject) {
+
+        this.subject = subject;
+    }
+}
