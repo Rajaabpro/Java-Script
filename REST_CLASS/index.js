@@ -1,3 +1,4 @@
+const { log } = require('console');
 const express = require('express');
 const app = express();
 const port = 9090;
@@ -30,6 +31,13 @@ app.get('/posts', (req, res) => {
     res.render('index', { posts });
 });
 
+app.get('/posts/new', (req, res) => {
+    res.render('new');
+});
+
+app.post('/posts', (req, res) => {
+    console.log(req.body);
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
