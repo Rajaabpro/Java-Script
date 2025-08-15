@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const port = 9000;
+const port = 9090;
+
 const path = require('path');
 
 app.use(express.urlencoded({ extended: true }));
@@ -26,7 +27,7 @@ let posts = [
     }
 ]
 app.get('/posts', (req, res) => {
-    res.render("index.ejs");
+    res.render('index', { posts });
 });
 
 
