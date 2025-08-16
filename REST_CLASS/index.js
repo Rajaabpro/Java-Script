@@ -1,11 +1,8 @@
 const { log } = require('console');
-
 const express = require('express');
-
 const app = express();
-
+const { v4: uuidv4 } = require('uuid');
 const port = 9090;
-
 const path = require('path');
 
 app.use(express.urlencoded({ extended: true }));
@@ -19,17 +16,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 let posts = [
     {
-        id: 1,
+        id: uuidv4(),
         username: "Rajaab",
         content: "Hello, world!"
     },
     {
-        id: 2,
+        id: uuidv4(),
         username: "John",
         content: "Hello, world!"
     },
     {
-        id: 3,
+        id: uuidv4(),
         username: "Jane",
         content: "Hello, world!"
     }
@@ -52,7 +49,7 @@ app.post('/posts', (req, res) => {
 app.get('/posts/:id', (req, res) => {
     let { id } = req.params;
     let post = posts.find(post => post.id === parseInt(id));
-    console.log(post);
+    res.render('show', { post });
 });
 
 app.listen(port, () => {
