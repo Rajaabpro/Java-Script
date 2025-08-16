@@ -15,6 +15,10 @@
         <h3 class="username">@ <%= post.username %></h3>
         <h4 class="content"><%= post.content %></h4>
         <a href="/posts/<%= post.id %>">View Post</a>
+        <a href="/posts/<%= post.id %>/edit">Edit Post</a>
+        <form action="/posts/<%= post.id %>?_method=DELETE" method="post" style="display: inline;">
+            <button type="submit">Delete Post</button>
+        </form>
     </div>
     <% } %>
 
